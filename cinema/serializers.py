@@ -31,9 +31,9 @@ class CinemaHallSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CinemaHall
-        fields = ("name", "rows", "seats_in_row", "capacity")
+        fields = ("id", "name", "rows", "seats_in_row", "capacity")
 
-    def get_capacity(self, obj):
+    def get_capacity(self, obj) -> int:
         return obj.rows * obj.seats_in_row
 
 
